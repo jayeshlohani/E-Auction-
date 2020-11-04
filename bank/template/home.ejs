@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Auction_App</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  	  	div {
+  		margin: 25px 50px;
+		}
+  </style>
+</head>
+<body>
+	<div>
+		<h1>AUCTIONEER HANDLE</h1>
+	</div>
+	<div>
+		<h3>LIST OF ACCOUNTS AND THEIR BIDS FOR THE PAINTING:</h3> 
+		<ul>
+		  {% for acc in bid_list %}
+		    <li class="well well-sm" >{{ acc }}</li>
+		  {% endfor %} 
+		</ul>
+	</div>	
+	<div>
+		<form action="/bank/auctioneer/result" method="post">
+		{% csrf_token %}
+			<input type="submit" value="End Auction" class="btn btn-danger"/> 
+		</form>
+	</div>
+	<hr>
+</body>
+</html>

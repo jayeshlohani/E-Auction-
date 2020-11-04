@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Auction_App</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  	  	div {
+  		margin: 25px 50px;
+		}
+  </style>
+</head>
+<body>
+	<div>
+		<h1>BIDDERS HANDLE</h1>
+	</div> 
+	<div>
+		<form action="bid" method="post">
+		{% csrf_token %}
+			Amount : <input type="text" name="amt" id="amt" class="form-control" /><br>
+			<input type="submit" class="btn btn-success"/> 
+		</form>
+		<br><br>
+		<form action="{{ request.path }}/withdraw" method="post">
+		{% csrf_token %}
+			<input type="submit" value="Withdraw"/ class="btn btn-warning"> 
+		</form>
+	</div>	
+
+	<hr>
+</body>
+</html>
